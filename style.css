@@ -1,0 +1,76 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#metal {
+  flex-direction: column;
+  display: flex;
+  background-color: rgb(215, 215, 215);
+  width: 400px;
+  height: 600px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#display {
+  height: 50px;
+  margin: 10px;
+  background-color: rgb(9, 33, 26);
+  color: rgb(32, 255, 32);
+  border-radius: 4px;
+  text-align: right;
+  font-size: 2.5em;
+}
+
+#btns-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 80px;
+}
+
+.placehldr {
+  filter: opacity(0);
+}
+
+.num-btn,
+.op-btn {
+  width: 80px;
+  height: 80px;
+  font-size: 2em;
+  text-align: center;
+  transition: all 0.25s ease;
+  user-select: none;
+  border-radius: 4px;
+}
+
+.num-btn:hover,
+.op-btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.num-btn:active,
+.op-btn:active {
+  filter: saturate(30%);
+}
+
+.num-btn {
+  background-color: darkred;
+  color: azure;
+}
+
+.op-btn {
+  background-color: cyan;
+  color: darkblue;
+}
