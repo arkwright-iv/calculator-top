@@ -41,6 +41,15 @@ body {
   margin-top: 50px;
 }
 
+.first-row {
+  justify-content: flex-end;
+}
+
+.btns {
+  display: flex;
+  gap: 4px;
+}
+
 .num-btn,
 .op-btn {
   width: 80px;
