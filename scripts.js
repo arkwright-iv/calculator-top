@@ -36,6 +36,10 @@ function clearSlots() {
 }
 
 function render() {
+  displayValue = displayValue.toString();
+  if (displayValue.length > 12) {
+    displayValue = displayValue.slice(0, 12);
+  }
   display.textContent = displayValue;
 }
 

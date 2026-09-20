@@ -20,13 +20,15 @@ body {
 }
 
 #display {
-  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 75px;
   margin: 10px;
   background-color: rgb(9, 33, 26);
   color: rgb(32, 255, 32);
   border-radius: 4px;
-  text-align: right;
-  font-size: 2.5em;
+  font-size: 3.5em;
 }
 
 #btns-container {
@@ -36,7 +38,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .num-btn,
