@@ -39,10 +39,6 @@ body {
   margin-top: 80px;
 }
 
-.placehldr {
-  filter: opacity(0);
-}
-
 .num-btn,
 .op-btn {
   width: 80px;
