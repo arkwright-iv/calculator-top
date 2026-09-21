@@ -42,7 +42,14 @@ body {
 }
 
 .first-row {
-  justify-content: flex-end;
+  width: 332px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.equals {
+  color: yellow !important;
+  background-color: darkgoldenrod !important;
 }
 
 .btns {

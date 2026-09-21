@@ -1,6 +1,7 @@
 const numBtns = document.querySelectorAll(".num-btn");
-const opBtns = document.querySelectorAll(".op-btn:not(.dot-btn)");
+const opBtns = document.querySelectorAll(".op-btn:not(.dot-btn, .backspace)");
 const dotBtn = document.querySelector(".dot-btn");
+const backspace = document.getElementById("backspace");
 const display = document.getElementById("display");
 const clearAll = document.getElementById("clear-all");
 
@@ -54,6 +55,20 @@ opBtns.forEach((btn) => {
 dotBtn.addEventListener("click", handleFloat);
 
 clearAll.addEventListener("click", purge);
+
+backspace.addEventListener("click", () => {
+  if (displayValue !== null && displayValue !== "" && displayValue !== "0") {
+    if (displayValue.length === 1) {
+      displayValue = "0";
+      render();
+    } else {
+      displayValue = [...displayValue];
+      displayValue.pop();
+      displayValue = displayValue.join("");
+      render();
+    }
+  }
+});
 
 function add(a, b) {
   return Number(a) + Number(b);
