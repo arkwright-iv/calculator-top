@@ -56,19 +56,7 @@ dotBtn.addEventListener("click", handleFloat);
 
 clearAll.addEventListener("click", purge);
 
-backspace.addEventListener("click", () => {
-  if (displayValue !== null && displayValue !== "" && displayValue !== "0") {
-    if (displayValue.length === 1) {
-      displayValue = "0";
-      render();
-    } else {
-      displayValue = [...displayValue];
-      displayValue.pop();
-      displayValue = displayValue.join("");
-      render();
-    }
-  }
-});
+backspace.addEventListener("click", eraseLastDigit);
 
 function add(a, b) {
   return Number(a) + Number(b);
@@ -158,5 +146,19 @@ function handleNumbers(e) {
   } else {
     displayValue += e.target.textContent;
     render();
+  }
+}
+
+function eraseLastDigit() {
+  if (displayValue !== null && displayValue !== "" && displayValue !== "0") {
+    if (displayValue.length === 1) {
+      displayValue = "0";
+      render();
+    } else {
+      displayValue = [...displayValue];
+      displayValue.pop();
+      displayValue = displayValue.join("");
+      render();
+    }
   }
 }
