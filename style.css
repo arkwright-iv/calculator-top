@@ -47,9 +47,9 @@ body {
   justify-content: space-between;
 }
 
-.equals {
+.equals-btn {
   color: yellow !important;
-  background-color: darkgoldenrod !important;
+  background-color: rgb(81, 58, 2) !important;
 }
 
 .btns {
@@ -72,6 +72,10 @@ body {
 .op-btn:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+.is-active {
+  filter: saturate(30%);
 }
 
 .num-btn:active,

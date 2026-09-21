@@ -1,9 +1,9 @@
 const numBtns = document.querySelectorAll(".num-btn");
 const opBtns = document.querySelectorAll(".op-btn:not(.dot-btn, .backspace)");
 const dotBtn = document.querySelector(".dot-btn");
-const backspace = document.getElementById("backspace");
+const backspace = document.getElementById("Backspace");
 const display = document.getElementById("display");
-const clearAll = document.getElementById("clear-all");
+const clearAll = document.getElementById("c");
 
 let firstNumber = null;
 let secondNumber = null;
@@ -43,6 +43,10 @@ function render() {
   }
   display.textContent = displayValue;
 }
+
+document.addEventListener("keydown", globalHandlerDown);
+
+document.addEventListener("keyup", globalHandlerUp);
 
 numBtns.forEach((btn) => {
   btn.addEventListener("click", handleNumbers);
@@ -101,6 +105,24 @@ function operate(op, a, b) {
       render();
       clearSlots();
       break;
+  }
+}
+
+function globalHandlerDown(e) {
+  console.log(`keypressed: ${e.key}, kcode: ${e.code}`);
+  const button = document.getElementById(`${e.key}`);
+  if (button) {
+    e.preventDefault();
+    button.classList.add("is-active");
+    button.click();
+  }
+}
+
+function globalHandlerUp(e) {
+  console.log(`keypressed: ${e.key}, kcode: ${e.code}`);
+  const button = document.getElementById(`${e.key}`);
+  if (button) {
+    button.classList.remove("is-active");
   }
 }
 
